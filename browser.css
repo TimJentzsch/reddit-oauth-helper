@@ -1,0 +1,9 @@
+/* Tokens */
+.token {
+    border: none;
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 20em;
+}

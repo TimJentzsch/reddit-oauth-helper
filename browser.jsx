@@ -178,13 +178,22 @@ function AnonymousTokenDisplay (props) {
         Anonymous token (expires after 1 hour, cannot access account-specific information):{' '}
       </span>
       <span>
-        <input type="text" readonly value={props.anonymousToken || '...loading'} />
+        <input id="anonymousToken" type="text" className="token" readOnly value={props.anonymousToken || '...loading'} />
       </span>
+      <button disabled={!props.anonymousToken}>
+        Copy
+      </button>
       <button disabled={!props.anonymousToken} onClick={props.generateNewToken}>
         Regenerate
       </button>
     </div>
   );
+}
+
+function copyInputElement(id) {
+  const text = document.getElementById(id);
+  text.select;
+  document.execCommand("copy");
 }
 
 function ClientInfoInput (props) {
@@ -285,14 +294,14 @@ function UserTokenDisplay (props) {
       {
         props.refreshToken
           ? <div>
-            Refresh token: <input type="text" readonly value={props.refreshToken} />
+            Refresh token: <input type="text" class="token" readOnly value={props.refreshToken} />
           </div>
           : <div>
             Refresh token: (None, you selected a temporary duration)
           </div>
       }
       <div>
-        Access token: <input type="text" readonly value={props.accessToken} />
+        Access token: <input type="text" class="token" readOnly value={props.accessToken} />
       </div>
       <input type="submit" value="Revoke these tokens" onClick={props.revokeTokens} />
       {

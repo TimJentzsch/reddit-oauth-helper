@@ -30,7 +30,8 @@
     "request-promise": "^2.0.1"
   },
   "devDependencies": {
-    "babel-core": "^6.25.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",

@@ -89,7 +89,7 @@ class RedditOauthHelper extends React.Component {
     return fetch('https://www.reddit.com/api/v1/access_token', {
       method: 'post',
       body: form,
-      headers: { authorization: `Basic ${ btoa(this.props.anonymousClientId + ':') }` },
+      headers: { authorization: `Basic ${btoa(this.props.anonymousClientId + ':')}` },
       credentials: 'omit'
     }).then(response => response.text()).then(JSON.parse).then(tokenInfo => tokenInfo.access_token).then(anonymousToken => {
       const anonymousSnoowrap = new snoowrap({ accessToken: anonymousToken });
